@@ -6,31 +6,24 @@
 
 int arr[MAX_INDEX];
 
-void printArr()
-{
+void printArr() {
 	for (int i = 0; i < MAX_INDEX; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
 	return;
 }
 
-void cocktailShakerSort()
-{
-	for (int i = 0; i < MAX_INDEX / 2; i++)
-	{
+void cocktailShakerSort() {
+	for (int i = 0; i < MAX_INDEX / 2; i++) {
 		int j;
-		for (j = i; j < MAX_INDEX - i - 1; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
+		for (j = i; j < MAX_INDEX - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
 				int temp = arr[j];
 				arr[j] = arr[j + 1], arr[j + 1] = temp;
 			}
 		}
-		for (; j > i; j--)
-		{
-			if (arr[j - 1] > arr[j])
-			{
+		for (; j > i; j--) {
+			if (arr[j - 1] > arr[j]) {
 				int temp = arr[j];
 				arr[j] = arr[j - 1], arr[j - 1] = temp;
 			}
@@ -39,16 +32,14 @@ void cocktailShakerSort()
 	return;
 }
 
-void shuffle()
-{
+void shuffle() {
 	srand((unsigned int)time(NULL));
 	for (int i = 0; i < MAX_INDEX; i++)
 		arr[i] = rand() % MAX_VALUE + 1;
 	return;
 }
 
-int main()
-{
+int main() {
 	shuffle();
 	printArr();
 	cocktailShakerSort();
