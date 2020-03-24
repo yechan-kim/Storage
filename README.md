@@ -13,4 +13,4 @@
   * 선택 정렬 (selection Sort)
 
 ## Sudoku Solver
-  * 스도쿠의 답을 출력하는 프로그램
+  * 스도쿠의 답을 출력하는 프로그램  
