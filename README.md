@@ -7,7 +7,7 @@
 ### Linked list !
 #### Circular Linked List !
 #### Doubly Linked List !
-#### Singly Linked List !
+#### Singly Linked List
 ### Stack !
 ### Tree !
 #### Binary Tree !
