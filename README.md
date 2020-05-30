@@ -3,11 +3,10 @@
   
 ## Data Structure
 ### Array
+  * 여러 개의 같은 자료형 값을 저장할 수 있는 자료구조
 ### Graph !
-### Linked list !
-#### Circular Linked List !
-#### Doubly Linked List !
-#### Singly Linked List
+### Linked list
+  * 포인터를 이용하여 고의적으로 자료를 연결시킨 자료구조
 ### Stack !
 ### Tree !
 #### Binary Tree !
@@ -39,6 +38,3 @@
   * 피벗을 이용하여 분할 후 정렬하는 알고리즘
 ### 선택 정렬 (selection Sort)
   * 배열에서 최댓값을 찾으며 정렬하는 알고리즘
-
-## Sudoku Solver
-  * 스도쿠의 답을 출력하는 프로그램  
