@@ -1,4 +1,4 @@
-# Selection Sort
+# SelectionSort
   > 배열의 수를 정렬하는 알고리즘
 
 ## 개념
