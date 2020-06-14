@@ -13,7 +13,34 @@ void printArr() {
 	return;
 }
 
-void quickSort(int left, int right) {
+void plainQuickSort(int left, int right) {
+	int less[MAX_INDEX], lessLength = 0;
+	int same[MAX_INDEX], sameLength = 0;
+	int more[MAX_INDEX], moreLength = 0;
+	int pivot = arr[left];
+	for (int a = left + 1; a <= right; a++)
+		if (arr[a] < pivot)
+			less[lessLength++] = arr[a];
+		else if (arr[a] == pivot)
+			same[sameLength++] = arr[a];
+		else
+			more[moreLength++] = arr[a];
+	int i = left;
+	for (int a = 0; a < lessLength; a++, i++)
+		arr[i] = less[a];
+	arr[i++] = pivot;
+	for (int a = 0; a < sameLength; a++, i++)
+		arr[i] = same[a];
+	for (int a = 0; a < moreLength; a++, i++)
+		arr[i] = more[a];
+	if (lessLength > 1)
+		plainQuickSort(left, left + lessLength - 1);
+	if (moreLength > 1)
+		plainQuickSort(right - moreLength + 1, right);
+	return;
+}
+
+void inPlaceQuickSort(int left, int right) {
 	int a = left, b = right,
 		pivot = arr[(left + right) / 2];
 	for (; a <= b;) {
@@ -28,9 +55,9 @@ void quickSort(int left, int right) {
 		}
 	}
 	if (left < b)
-		quickSort(left, b);
+		inPlaceQuickSort(left, b);
 	if (a < right)
-		quickSort(a, right);
+		inPlaceQuickSort(a, right);
 	return;
 }
 
@@ -44,7 +71,12 @@ void shuffle() {
 int main() {
 	shuffle();
 	printArr();
-	quickSort(0, MAX_INDEX - 1);
+	plainQuickSort(0, MAX_INDEX - 1);
+	printArr();
+
+	shuffle();
+	printArr();
+	inPlaceQuickSort(0, MAX_INDEX - 1);
 	printArr();
 	return 0;
 }

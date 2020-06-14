@@ -8,7 +8,71 @@
   |최선|최악|평균|
   |:-:|:-:|:-:|
   |O(n log n)|O(n^2)|O(n log n)|
-## 예시
+
+## Plain Quick Sort
+### 예시
+  ```css
+  Original
+  776 274 256 634 267 873 895 616 544 75
+
+  1 pass pivot : 776
+  274 256 634 267 616 544 75 / 776 / 873 895
+
+  1-1 pass pivot : 274
+  256 267 75 / 274 / 634 616 544
+
+  1-1-1 pass pivot : 256
+  75 / 256 / 267
+
+  1-1-1 combine
+  75 256 267
+
+  1-1-2 pass pivot : 634
+  544 616 / 634 /
+
+  1-1-2-1 pass pivot : 544
+  / 544 / 616
+
+  1-1-2-1 combine
+  544 616
+
+  1-1-2 combine
+  544 616 634
+
+  1-1 combine
+  75 256 267 274 544 616 634
+
+  1-2 pass pivot : 873
+  / 873 / 895
+
+  1-2 combine
+  873 895
+
+  1 combine
+  75 256 267 274 544 616 634 776 873 895
+  ```
+### 수도코드
+  ```
+  procedure plainQuickSort(Array[], start, end):
+    left := start, right := end
+    pivot := Array[left]
+    while a from left to right:
+      if Array[a] < pivot: enqueue less queue
+      else if Array[a] == pivot: enqueue same queue
+      else if Array[a] > pivot: enqueue more queue
+    re-copy all queue to Array[]
+    left := less queue's length
+    right := more queue's length
+    right := end - right + 1
+    if left unsorted part:
+      plainQuickSort(Array[], start, left - 1)
+    if right unsorted part:
+      plainQuickSort(Array[], right, end)
+  end procedure
+  ```
+
+## In-Place Quick Sort
+### 예시
   ```css
   Original
   222 345 489 683 418 631 999 791 12
@@ -56,7 +120,7 @@
   Final combine
   12 222 345 418 489 631 683 791 999
   ```
-## 수도코드
+### 수도코드
   ```
   procedure quickSort(Array[], start, end):
     left := start, right := end
@@ -65,15 +129,16 @@
       find not smaller value from left
       find not bigger value from right
       swap two value
-      left := currentLeft + 1, right := currentRight + 1
+      left := currentLeft + 1, right := currentRight - 1
     if left unsorted part:
       quickSort(Array[], start, right)
     if right unsorted part:
       quickSort(Array[], left, end)
   end procedure
   ```
+
 ## 참고
   * 분할정복
 
 ## 수정일
-  > 2020 / 2 / 25
+  > 2020 / 6 / 14
