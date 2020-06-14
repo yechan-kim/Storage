@@ -26,6 +26,8 @@
   * 앞뒤로 비교하며 정렬하는 알고리즘
 ### 칵테일 셰이커 정렬 (cocktail shaker Sort)
   * 양방향으로 거품정렬하여 정렬하는 알고리즘
+### Duplex Selection Sort
+  * 단방향으로 최댓값, 최솟값을 찾아 1번의 pass에 2개의 값을 정렬하는 알고리즘
 ### 힙 정렬 (heap Sort)
   * 완전 이진트리의 형태를 이용하여 특정 값만을 빠르게 뽑아 정렬하는 알고리즘
 ### 삽입 정렬 (insertion Sort)
@@ -36,5 +38,7 @@
   * 배열을 뒤집어가며 정렬하는 알고리즘
 ### 퀵 정렬 (quick Sort)
   * 피벗을 이용하여 분할 후 정렬하는 알고리즘
+#### Plain Quick Sort
+#### In-Place Quick Sort
 ### 선택 정렬 (selection Sort)
   * 배열에서 최댓값을 찾으며 정렬하는 알고리즘
